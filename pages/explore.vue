@@ -41,6 +41,10 @@ const formatTime = (unixTimestamp) => {
   })
 }
 
+const profileInitial = (name = '') => {
+  return (name.trim().charAt(0) || '?').toUpperCase()
+}
+
 onMounted(async () => {
   await refreshSites()
 })
@@ -80,13 +84,34 @@ onMounted(async () => {
 
     <div v-else class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <article v-for="site in sites" :key="site.id" class="surface-card p-5 fade-in-up">
+        <div class="mb-3 flex items-center gap-3">
+          <img
+            v-if="site.profileImage"
+            :src="site.profileImage"
+            :alt="`${site.profileName} profile image`"
+            class="h-10 w-10 rounded-full border object-cover"
+            :style="{ borderColor: 'var(--line)' }"
+          >
+          <div
+            v-else
+            class="flex h-10 w-10 items-center justify-center rounded-full border text-sm font-black"
+            :style="{ borderColor: 'var(--line)', color: 'var(--muted)' }"
+          >
+            {{ profileInitial(site.profileName) }}
+          </div>
+
+          <div class="min-w-0">
+            <p class="truncate text-sm font-black">{{ site.profileName }}</p>
+            <p class="truncate text-xs" :style="{ color: 'var(--muted)' }">{{ site.npub }}</p>
+          </div>
+        </div>
+
         <div class="flex items-start justify-between gap-3">
           <h2 class="text-lg font-black">{{ site.title }}</h2>
           <span class="rounded-full px-2 py-1 text-xs font-semibold" :style="{ background: 'var(--line)' }">
             kind {{ site.kind }}
           </span>
         </div>
-        <p class="mt-3 break-all text-xs" :style="{ color: 'var(--muted)' }">{{ site.npub }}</p>
         <p class="mt-1 text-xs" :style="{ color: 'var(--muted)' }">Updated {{ formatDate(site.createdAt) }}</p>
 
         <div class="mt-4 flex flex-wrap gap-2 text-sm">
