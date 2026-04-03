@@ -1,27 +1,23 @@
 <script setup>
-import { Shader, SimplexNoise } from 'shaders/vue'
-
+useSeoMeta({
+  title: 'Nostr Boutique',
+  description: 'Host your own self sovereign shop.'
+})
 </script>
 
 <template>
-  <div>
-    <header>
+  <section class="w-full max-w-3xl text-center">
+    <div class="flex justify-center">
+      <SiteBrand />
+    </div>
 
-    </header>
-    <main class="text-center bg-purple-200">
-      <Hero heading="Welcome to Nuxtstack" />
-      <Shader class="h-64 overflow-hidden rounded-4xl max-w-7xl mx-auto">
-        <SimplexNoise colorA="#3c0366" colorB="#a477fd" :scale="1.5" :balance="0.8" :contrast="0.5" :speed="0.25" />
-      </Shader>
-      <hr class="my-20 border-white" />
-      <NostrComponentsArticles
-          :tag-filter="['nostr']"
-          :show-author="true"
-          :show-topics="false"
-          :limit="10"
-          grid-cols="md:grid-cols-2 xl:grid-cols-3"
-      />
-    </main>
-    <Footer />
-  </div>
+    <div class="mx-auto mt-10 grid max-w-xl gap-3 sm:grid-cols-2">
+      <NuxtLink to="/example" class="cta-primary inline-flex items-center justify-center border px-6 py-3 text-sm font-bold transition hover:opacity-90">
+        I have a key
+      </NuxtLink>
+      <NuxtLink to="/explain" class="cta-accent inline-flex items-center justify-center border px-6 py-3 text-sm font-bold transition hover:opacity-80">
+        I'm new here
+      </NuxtLink>
+    </div>
+  </section>
 </template>
