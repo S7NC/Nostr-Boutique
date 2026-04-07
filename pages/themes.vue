@@ -137,7 +137,11 @@ const cloneTheme = async (theme) => {
           d tag: <code>{{ theme.d }}</code>
         </p>
 
-        <div class="mt-3 flex items-center gap-2">
+        <p class="mt-3 text-xs font-bold uppercase tracking-[0.08em]" :style="{ color: 'var(--muted)' }">
+          Visit Nsite:
+        </p>
+
+        <div class="mt-2 flex items-center gap-2">
           <a
             :href="toGatewayUrls(theme).cloud"
             target="_blank"

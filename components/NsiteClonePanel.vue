@@ -215,10 +215,11 @@ const runNewcomerFlow = async () => {
 </script>
 
 <template>
-  <div class="mx-auto mt-8 w-full max-w-3xl space-y-5 text-left" :style="{ color: '#fff' }">
+  <div class="mx-auto mt-0 w-full max-w-3xl space-y-5 text-left" :style="{ color: '#fff' }">
     <div class="rounded-2xl border p-4 sm:p-5" :style="{ borderColor: 'rgba(167,139,250,0.45)', background: 'rgba(6, 5, 16, 0.38)' }">
       <div>
-        <h2 class="text-2xl font-black">Set your name & store your key</h2>
+        <h2 class="text-2xl font-black">Create Store Front</h2>
+        <p class="mt-1 text-sm" :style="{ color: 'rgba(255,255,255,0.85)' }">Set your name & store your key</p>
       </div>
 
       <label class="mt-5 block text-xs font-bold uppercase tracking-[0.08em]" :style="{ color: 'rgba(255,255,255,0.85)' }">Name</label>
@@ -288,7 +289,7 @@ const runNewcomerFlow = async () => {
         :disabled="newcomerBusy || !newcomerName.trim() || !newcomerConfirmed"
         @click="runNewcomerFlow"
       >
-        {{ newcomerBusy ? 'Deploying...' : 'Generate & Deploy' }}
+        {{ newcomerBusy ? 'Deploying...' : 'Deploy my shop' }}
       </button>
 
       <div v-if="newcomerError" class="mt-4 rounded-xl border px-3 py-2 text-xs text-white" :style="{ borderColor: 'rgba(255,255,255,0.5)', background: '#000' }">{{ newcomerError }}</div>
@@ -298,7 +299,7 @@ const runNewcomerFlow = async () => {
       </div>
     </div>
 
-    <div class="mt-4 text-center text-sm font-black uppercase tracking-[0.14em]" :style="{ color: 'var(--text)' }">
+    <div class="mt-4 text-center text-sm font-black uppercase tracking-[0.14em]" :style="{ color: '#fff' }">
       Or
     </div>
 

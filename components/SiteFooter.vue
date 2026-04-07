@@ -12,11 +12,11 @@ const isActive = (path) => route.path === path
           <SiteBrand compact />
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 text-sm sm:justify-end">
-          <NuxtLink to="/" class="px-2 py-1 text-sm font-semibold" :style="isActive('/') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }">Home</NuxtLink>
-          <NuxtLink to="/example" class="px-2 py-1 text-sm font-semibold" :style="isActive('/example') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }">Example</NuxtLink>
-          <NuxtLink to="/themes" class="px-2 py-1 text-sm font-semibold" :style="isActive('/themes') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }">Themes</NuxtLink>
-          <NuxtLink to="/explore" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explore') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }">Explore</NuxtLink>
-          <NuxtLink to="/explain" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explain') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }">Explain</NuxtLink>
+          <NuxtLink to="/" class="px-2 py-1 text-sm font-semibold" :style="isActive('/') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Home</NuxtLink>
+          <NuxtLink to="/example" class="px-2 py-1 text-sm font-semibold" :style="isActive('/example') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Example</NuxtLink>
+          <NuxtLink to="/themes" class="px-2 py-1 text-sm font-semibold" :style="isActive('/themes') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Themes</NuxtLink>
+          <NuxtLink to="/explore" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explore') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Explore</NuxtLink>
+          <NuxtLink to="/explain" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explain') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Explain</NuxtLink>
           <a
             href="https://github.com/openmarketsfoundation"
             target="_blank"

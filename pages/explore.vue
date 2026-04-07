@@ -84,16 +84,25 @@ onMounted(async () => {
             :style="{ borderColor: 'var(--line)' }"
           >
 
-          <div class="min-w-0">
-            <p class="truncate text-sm font-black">{{ site.profileName }}</p>
-            <p class="truncate text-xs" :style="{ color: 'var(--muted)' }">{{ site.npub }}</p>
+          <div class="min-w-0 flex-1">
+            <p class="block max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-black">{{ site.profileName }}</p>
+            <p
+              class="block max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs"
+              :style="{ color: 'var(--muted)' }"
+            >
+              {{ site.npubShort }}
+            </p>
           </div>
         </div>
 
         <div class="flex items-start justify-between gap-3">
-          <h2 class="text-lg font-black">{{ site.title }}</h2>
+          <h2 v-if="site.title && site.title !== 'Unnamed Nsite'" class="text-lg font-black">{{ site.title }}</h2>
         </div>
         <p class="mt-1 text-xs" :style="{ color: 'var(--muted)' }">Updated {{ formatDate(site.createdAt) }}</p>
+
+        <p class="mt-4 text-xs font-bold uppercase tracking-[0.08em]" :style="{ color: 'var(--muted)' }">
+          Visit Nsite:
+        </p>
 
         <div class="mt-4 flex flex-wrap gap-2 text-sm">
           <a

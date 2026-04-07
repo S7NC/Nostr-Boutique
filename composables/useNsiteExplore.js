@@ -112,6 +112,7 @@ export const useNsiteExplore = () => {
           id: event.id,
           pubkey: event.pubkey,
           npub,
+          npubShort: shortNpub(npub),
           title: toSiteTitle(event),
           profileName: toProfileName(profile, npub),
           profileImage: profile.picture || '',

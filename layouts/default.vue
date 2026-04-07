@@ -36,7 +36,7 @@ const isActive = (path) => route.path === path
               :key="link.to"
               :to="link.to"
               class="shrink-0 px-3 py-1.5 text-center text-xs font-bold whitespace-nowrap transition sm:px-4 sm:py-2 sm:text-sm"
-              :style="isActive(link.to) ? { color: 'var(--text)', boxShadow: 'inset 0 -3px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }"
+              :style="isActive(link.to) ? { color: 'var(--text)', boxShadow: 'inset 0 -3px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }"
             >
               {{ link.label }}
             </NuxtLink>
@@ -102,7 +102,7 @@ const isActive = (path) => route.path === path
             :key="`mobile-${link.to}`"
             :to="link.to"
             class="px-3 py-2 text-center text-xs font-bold transition"
-            :style="isActive(link.to) ? { color: 'var(--text)', boxShadow: 'inset 0 -3px 0 var(--menu-active-underline)' } : { color: 'var(--muted)' }"
+            :style="isActive(link.to) ? { color: 'var(--text)', boxShadow: 'inset 0 -3px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }"
           >
             {{ link.label }}
           </NuxtLink>
