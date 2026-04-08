@@ -102,6 +102,24 @@ const copyNsecAndConfirm = async () => {
   }
 }
 
+const attemptStoreKeyOnDeploy = async ({ name, nsec }) => {
+  if (!process.client) return
+  if (!name || !nsec) return
+  if (!window.isSecureContext) return
+  if (!('PasswordCredential' in window) || !navigator.credentials?.store) return
+
+  try {
+    const credential = new window.PasswordCredential({
+      id: name,
+      name,
+      password: nsec
+    })
+    await navigator.credentials.store(credential)
+  } catch {
+    // Best effort only. Deploy flow continues even if browser declines.
+  }
+}
+
 const resetStatus = () => {
   existingError.value = ''
   existingSuccessUrl.value = ''
@@ -171,6 +189,11 @@ const runNewcomerFlow = async () => {
     return
   }
 
+  await attemptStoreKeyOnDeploy({
+    name: newcomerName.value.trim(),
+    nsec: newcomerIdentity.value.nsec
+  })
+
   newcomerBusy.value = true
 
   try {
@@ -239,15 +262,15 @@ const runNewcomerFlow = async () => {
       <div class="mt-2 flex items-center gap-2">
         <input
           :value="newcomerIdentity?.nsec || ''"
-          type="password"
+          type="text"
           name="nsec-key"
-          autocomplete="new-password"
+          autocomplete="off"
           autocorrect="off"
           autocapitalize="none"
           spellcheck="false"
           readonly
           class="w-full rounded-xl border px-3 py-2.5 text-sm outline-none"
-          :style="fieldStyle"
+          :style="{ ...fieldStyle, WebkitTextSecurity: 'disc', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }"
         >
         <button
           type="button"
