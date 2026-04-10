@@ -30,7 +30,7 @@ const isActive = (path) => route.path === path
         <div class="flex items-center justify-between gap-3">
           <SiteBrand compact />
 
-          <nav class="hidden min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto md:flex md:gap-3" style="scrollbar-width: none;">
+          <nav class="hidden min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto min-[950px]:flex min-[950px]:gap-3" style="scrollbar-width: none;">
             <NuxtLink
               v-for="link in links"
               :key="link.to"
@@ -40,6 +40,16 @@ const isActive = (path) => route.path === path
             >
               {{ link.label }}
             </NuxtLink>
+
+            <a
+              href="https://portal.nostr.boutique"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="ml-1 inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 text-sm font-black text-white transition hover:opacity-90"
+              :style="{ background: 'linear-gradient(90deg, #7c3aed 0%, #a855f7 100%)', color: '#fff' }"
+            >
+              Merchants
+            </a>
           </nav>
 
           <div class="flex items-center gap-2">
@@ -59,7 +69,7 @@ const isActive = (path) => route.path === path
             <SiteThemeToggle />
             <button
               type="button"
-              class="inline-flex h-9 w-9 items-center justify-center border md:hidden"
+              class="inline-flex h-9 w-9 items-center justify-center border min-[950px]:hidden"
               :style="{ borderColor: 'var(--line)' }"
               :aria-expanded="isMenuOpen ? 'true' : 'false'"
               aria-label="Toggle navigation menu"
@@ -96,7 +106,7 @@ const isActive = (path) => route.path === path
           </div>
         </div>
 
-        <nav v-if="isMenuOpen" class="mt-3 grid grid-cols-2 gap-2 md:hidden">
+        <nav v-if="isMenuOpen" class="mt-3 grid grid-cols-2 gap-2 min-[950px]:hidden">
           <NuxtLink
             v-for="link in links"
             :key="`mobile-${link.to}`"
@@ -106,6 +116,15 @@ const isActive = (path) => route.path === path
           >
             {{ link.label }}
           </NuxtLink>
+          <a
+            href="https://portal.nostr.boutique"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="col-span-2 inline-flex items-center justify-center rounded-full px-3 py-2 text-center text-xs font-black text-white"
+            :style="{ background: 'linear-gradient(90deg, #7c3aed 0%, #a855f7 100%)', color: '#fff' }"
+          >
+            Merchants
+          </a>
         </nav>
       </div>
     </header>

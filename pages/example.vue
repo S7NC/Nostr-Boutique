@@ -2,13 +2,10 @@
 const exampleCloudUrl = 'https://npub1equrmqway3qxw3dkssymusxkwgwrqypfgeqx0lx9pgjam7gnj4ysaqhkj6.nsite.cloud/'
 const exampleRunUrl = 'https://npub1equrmqway3qxw3dkssymusxkwgwrqypfgeqx0lx9pgjam7gnj4ysaqhkj6.nsite.run/'
 const exampleLolUrl = 'https://npub1equrmqway3qxw3dkssymusxkwgwrqypfgeqx0lx9pgjam7gnj4ysaqhkj6.nsite.lol/'
-const previewTarget = ref('lol')
+const examplePortalCloudUrl = 'https://npub1jegt4wpzxlwzy6p35767vjk5qxqw7udw0zl2z9frz4tku67qwfrsf2altc.nsite.cloud/'
 
-const previewUrl = computed(() => {
-  if (previewTarget.value === 'cloud') return exampleCloudUrl
-  if (previewTarget.value === 'run') return exampleRunUrl
-  return exampleLolUrl
-})
+const previewUrl = ref(examplePortalCloudUrl)
+const frameScale = 0.92
 
 useSeoMeta({
   title: 'Example | Nostr Boutique',
@@ -17,7 +14,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <section class="fade-in-up grid gap-4 lg:grid-cols-[1fr_1.1fr]">
+  <section class="fade-in-up space-y-4">
     <article class="surface-card p-6 sm:p-8">
       <span class="pill">Reference deployment</span>
       <h1 class="hero-title mt-4 text-4xl font-black leading-tight">See a live Gamma-style Nsite.</h1>
@@ -26,7 +23,7 @@ useSeoMeta({
         You can open it directly and inspect how a Nostr-hosted merchant surface behaves.
       </p>
 
-      <div class="mt-6 grid gap-3">
+      <div class="mt-6 flex flex-wrap gap-3">
         <a
           :href="exampleRunUrl"
           target="_blank"
@@ -34,6 +31,15 @@ useSeoMeta({
           class="cta-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-black"
         >
           Open live example
+        </a>
+        <a
+          :href="examplePortalCloudUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-full border px-5 py-2.5 text-sm font-bold"
+          :style="{ borderColor: 'var(--line)' }"
+        >
+          Open merchant portal
         </a>
         <a
           :href="exampleCloudUrl"
@@ -60,7 +66,7 @@ useSeoMeta({
 
     </article>
 
-    <article class="surface-card overflow-hidden p-3">
+    <article class="surface-card overflow-hidden p-2">
       <div class="mb-3 flex items-center gap-2 border px-3 py-2" :style="{ borderColor: 'var(--line)' }">
         <span class="h-2.5 w-2.5 rounded-full" :style="{ background: 'var(--muted)' }" />
         <span class="h-2.5 w-2.5 rounded-full" :style="{ background: 'var(--muted)' }" />
@@ -68,13 +74,15 @@ useSeoMeta({
         <span class="ml-2 truncate text-xs" :style="{ color: 'var(--muted)' }">{{ previewUrl }}</span>
       </div>
 
-      <iframe
-        title="Nostr Boutique Example Nsite"
-        :src="previewUrl"
-        class="h-[68vh] w-full rounded-xl border"
-        :style="{ borderColor: 'var(--line)' }"
-        loading="lazy"
-      />
+      <div class="overflow-hidden rounded-xl border" :style="{ borderColor: 'var(--line)' }">
+        <iframe
+          title="Nostr Boutique Example Nsite"
+          :src="previewUrl"
+          class="h-[90vh]"
+          :style="{ width: `${100 / frameScale}%`, transform: `scale(${frameScale})`, transformOrigin: 'top left' }"
+          loading="lazy"
+        />
+      </div>
     </article>
   </section>
 

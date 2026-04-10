@@ -18,6 +18,15 @@ const isActive = (path) => route.path === path
           <NuxtLink to="/explore" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explore') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Explore</NuxtLink>
           <NuxtLink to="/explain" class="px-2 py-1 text-sm font-semibold" :style="isActive('/explain') ? { color: 'var(--text)', boxShadow: 'inset 0 -2px 0 var(--menu-active-underline)' } : { color: 'var(--text)' }">Explain</NuxtLink>
           <a
+            href="https://portal.nostr.boutique"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-xs font-black text-white"
+            :style="{ background: 'linear-gradient(90deg, #7c3aed 0%, #a855f7 100%)', color: '#fff' }"
+          >
+            Merchants
+          </a>
+          <a
             href="https://github.com/openmarketsfoundation"
             target="_blank"
             rel="noopener noreferrer"

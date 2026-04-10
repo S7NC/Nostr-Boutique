@@ -42,6 +42,54 @@ useSeoMeta({
     </article>
   </section>
 
+  <section class="mt-6 fade-in-up">
+    <div class="surface-card p-6 sm:p-8">
+      <h2 class="text-2xl font-black sm:text-3xl">Tips for managing and key safety</h2>
+      <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+        Treat your key like the password to your store. Keep it private, backed up, and controlled.
+      </p>
+
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border p-4" :style="{ borderColor: 'var(--line)', background: 'var(--bg-soft)' }">
+          <h3 class="text-base font-black">Safety checklist</h3>
+          <ul class="mt-3 space-y-2 text-sm" :style="{ color: 'var(--muted)' }">
+            <li>- Clear your clipboard after copying your key.</li>
+            <li>- Store your key in a secure password manager.</li>
+            <li>- Keep backup copies in separate safe places.</li>
+            <li>- Never paste your nsec into unknown websites.</li>
+          </ul>
+        </article>
+
+        <article class="rounded-xl border p-4" :style="{ borderColor: 'var(--line)', background: 'var(--bg-soft)' }">
+          <h3 class="text-base font-black">Browser signer (Nos2x)</h3>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Use a browser extension signer so websites can request signatures without directly handling your key.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <a
+              href="https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.08em]"
+              :style="{ borderColor: 'var(--line)' }"
+            >
+              Nos2x for Chrome
+            </a>
+            <a
+              href="https://diegogurpegui.com/nos2x-fox/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.08em]"
+              :style="{ borderColor: 'var(--line)' }"
+            >
+              Nos2x for Firefox
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="mt-6 grid gap-4 lg:grid-cols-[1.2fr_1fr]">
     <article class="surface-card p-6">
       <h2 class="text-2xl font-black">Simple flow</h2>

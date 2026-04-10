@@ -239,7 +239,7 @@ const runNewcomerFlow = async () => {
 
 <template>
   <div class="mx-auto mt-0 w-full max-w-3xl space-y-5 text-left" :style="{ color: '#fff' }">
-    <div class="rounded-2xl border p-4 sm:p-5" :style="{ borderColor: 'rgba(167,139,250,0.45)', background: 'rgba(6, 5, 16, 0.69)' }">
+    <div class="rounded-2xl border p-4 sm:p-5 lg:mx-auto lg:max-w-[85%]" :style="{ borderColor: 'rgba(167,139,250,0.45)', background: 'rgba(6, 5, 16, 0.69)' }">
       <div>
         <h2 class="text-2xl font-black">Create Store Front</h2>
         <p class="mt-1 text-sm" :style="{ color: 'rgba(255,255,255,0.85)' }">Set your name & store your key</p>
@@ -302,7 +302,10 @@ const runNewcomerFlow = async () => {
 
       <label class="mt-4 flex items-center gap-2 text-sm">
         <input v-model="newcomerConfirmed" type="checkbox">
-        <span>I've copied and stored my key safely.</span>
+        <span>
+          I've copied and
+          <NuxtLink to="/explain" class="underline">stored my key safely</NuxtLink>.
+        </span>
       </label>
 
       <button
@@ -326,7 +329,7 @@ const runNewcomerFlow = async () => {
       Or
     </div>
 
-    <div class="mt-4 rounded-2xl border p-4 sm:p-5" :style="{ borderColor: 'rgba(167,139,250,0.45)', background: 'rgba(6, 5, 16, 0.69)' }">
+    <div class="mt-4 rounded-2xl border p-4 sm:p-5 lg:mx-auto lg:max-w-[85%]" :style="{ borderColor: 'rgba(167,139,250,0.45)', background: 'rgba(6, 5, 16, 0.69)' }">
       <div>
         <h2 class="text-2xl font-black">I'm already on Nostr!</h2>
         <p class="mt-1 text-sm" :style="{ color: 'rgba(255,255,255,0.82)' }">Use your existing signer key and deploy instantly.</p>

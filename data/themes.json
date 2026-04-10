@@ -1,17 +1,16 @@
 [
   {
-    "id": "gamma-root",
-    "title": "Gamma Root Store",
-    "description": "Root nsite template clone.",
-    "npub": "npub1equrmqway3qxw3dkssymusxkwgwrqypfgeqx0lx9pgjam7gnj4ysaqhkj6",
+    "id": "store-front",
+    "title": "Store Front",
+    "description": "Public storefront theme focused on product browsing and checkout discovery.",
+    "npub": "npub1mmel3r8h7e5vmgzzxn9g3tyk0538ha3yzu7d6ljwys2mqe7s0hpstlh820",
     "cloneAs": "root"
   },
   {
-    "id": "gamma-named",
-    "title": "Gamma Named Theme",
-    "description": "Named nsite clone example. Update d to match your manifest key.",
-    "npub": "npub1equrmqway3qxw3dkssymusxkwgwrqypfgeqx0lx9pgjam7gnj4ysaqhkj6",
-    "cloneAs": "named",
-    "d": "shop"
+    "id": "merchant-portal",
+    "title": "Merchant Portal",
+    "description": "Merchant operations theme for managing products, orders, and storefront updates.",
+    "npub": "npub1d9us5hs8lfza0eutuckpehv5zeyqpl9f2pfzgujjl7vwxqnalv9s4sng02",
+    "cloneAs": "root"
   }
 ]
