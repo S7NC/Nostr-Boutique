@@ -74,7 +74,8 @@ const toGatewayUrls = (theme) => {
     cloud: `https://${npub}.nsite.cloud/`,
     run: `https://${npub}.nsite.run/`,
     lol: `https://${npub}.nsite.lol/`,
-    boutique: `https://${npub}.nsite.boutique/`
+    boutique: `https://${npub}.nsite.boutique/`,
+    nostoRe: `https://${npub}.nosto.re/`
   }
 }
 
@@ -259,6 +260,17 @@ const cloneTheme = async (theme) => {
                 title="Open template via nsite.boutique"
               >
                 🛍️
+              </a>
+              <a
+                :href="toGatewayUrls(theme).nostoRe"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border text-lg"
+                :style="{ borderColor: 'var(--line)' }"
+                aria-label="Open template via nosto.re"
+                title="Open template via nosto.re"
+              >
+                🍌
               </a>
             </div>
 

@@ -144,7 +144,8 @@ export const useNsiteExplore = () => {
           nsiteCloudUrl: `https://${npub}.nsite.cloud`,
           nsiteRunUrl: `https://${npub}.nsite.run`,
           nsiteLolUrl: `https://${npub}.nsite.lol`,
-          nsiteBoutiqueUrl: `https://${npub}.nsite.boutique`
+          nsiteBoutiqueUrl: `https://${npub}.nsite.boutique`,
+          nostoReUrl: `https://${npub}.nosto.re`
         }
       })
   }
