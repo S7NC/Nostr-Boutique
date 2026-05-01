@@ -15,6 +15,10 @@ useSeoMeta({
 const defaultThemeImage = 'https://raw.githubusercontent.com/S7NC/Gamma-Napp/master/public/screenshot.png'
 const sourceNpub = 'npub1000000k94d2xgnfdyqkvvgmc4x2d798y67k2llk4szq7jarqhz2s540a03'
 
+const normalizeImagePath = (path = '') => {
+  return path.replace(/^\/?&\//, '/')
+}
+
 const THEME_SCREENSHOTS = {
   'store-front': [
     '/store-front/1.png',
@@ -66,12 +70,14 @@ const shortNpub = (npub = '') => {
 }
 
 const themeScreenshots = (theme) => {
-  return THEME_SCREENSHOTS[theme.id] || []
+  return (THEME_SCREENSHOTS[theme.id] || []).map(normalizeImagePath)
 }
 
 const activeThemeImage = (theme) => {
   const key = themeKey(theme)
-  return selectedImageByTheme.value[key] || theme.image || themeScreenshots(theme)[0] || defaultThemeImage
+  return normalizeImagePath(
+    selectedImageByTheme.value[key] || theme.image || themeScreenshots(theme)[0] || defaultThemeImage
+  )
 }
 
 const setActiveThemeImage = (theme, image) => {

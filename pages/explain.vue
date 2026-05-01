@@ -3,6 +3,16 @@ useSeoMeta({
   title: 'Explain | Nostr Boutique',
   description: 'Understand Nostr, Nsites, and gateways in plain language.'
 })
+
+const normalizeImagePath = (path = '') => {
+  return path.replace(/^\/?&\//, '/')
+}
+
+const stepImages = {
+  one: normalizeImagePath('/1.png'),
+  two: normalizeImagePath('/3.png'),
+  three: normalizeImagePath('/4.png')
+}
 </script>
 
 <template>
@@ -13,6 +23,98 @@ useSeoMeta({
       <p class="mt-3 max-w-3xl text-sm sm:text-base" :style="{ color: 'var(--muted)' }">
         If you are new to this stack, this page gives the practical mental model for how a sovereign storefront appears online.
       </p>
+    </div>
+  </section>
+
+  <section class="mt-6">
+    <h2 class="text-center text-2xl font-black sm:text-3xl">How to get started</h2>
+    <p class="mx-auto mt-2 max-w-3xl text-center text-sm" :style="{ color: 'var(--muted)' }">
+      Three practical steps to launch a sovereign storefront on Nostr.
+    </p>
+
+    <div class="mt-6 space-y-4">
+      <article class="overflow-hidden rounded-2xl border md:grid md:grid-cols-2" :style="{ borderColor: 'var(--line)', background: 'var(--bg-soft)' }">
+        <div class="md:h-full" :style="{ background: 'color-mix(in oklab, var(--bg) 95%, var(--text) 5%)' }">
+          <img :src="stepImages.one" alt="Step 1" class="block h-24 w-full object-cover md:h-full lg:h-64">
+        </div>
+        <div class="p-5">
+          <p class="text-xs font-extrabold uppercase tracking-[0.1em]" :style="{ color: 'var(--brand)' }">Step 1</p>
+          <h3 class="mt-2 text-lg font-black">The key is your identity</h3>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Your Nostr keypair is your account and ownership layer - simple, portable, and merchant-owned.
+          </p>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Decentralized products, merchant-owned identity, no platform lock-in.
+          </p>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-2xl border md:grid md:grid-cols-2" :style="{ borderColor: 'var(--line)', background: 'var(--bg-soft)' }">
+        <div class="order-0 md:order-2 md:h-full" :style="{ background: 'color-mix(in oklab, var(--bg) 95%, var(--text) 5%)' }">
+          <img :src="stepImages.two" alt="Step 2" class="block h-24 w-full object-cover md:h-full lg:h-64">
+        </div>
+        <div class="order-1 p-5 md:order-1">
+          <p class="text-xs font-extrabold uppercase tracking-[0.1em]" :style="{ color: 'var(--brand)' }">Step 2</p>
+          <h3 class="mt-2 text-lg font-black">Clone your storefront and choose checkout</h3>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Clone a storefront and start accepting Bitcoin payments, or enable a simple PayPal checkout.
+          </p>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Your site is addressable through Nostr and uses Blossom servers for storage.
+          </p>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Publish your site manifest to multiple relays for reach and redundancy.
+          </p>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-2xl border md:grid md:grid-cols-2" :style="{ borderColor: 'var(--line)', background: 'var(--bg-soft)' }">
+        <div class="md:h-full" :style="{ background: 'color-mix(in oklab, var(--bg) 95%, var(--text) 5%)' }">
+          <img :src="stepImages.three" alt="Step 3" class="block h-24 w-full object-cover md:h-full lg:h-64">
+        </div>
+        <div class="p-5">
+          <p class="text-xs font-extrabold uppercase tracking-[0.1em]" :style="{ color: 'var(--brand)' }">Step 3</p>
+          <h3 class="mt-2 text-lg font-black">Operate across gateways and clients</h3>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Your storefront and merchant portal stay accessible through multiple gateways.
+          </p>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Accessible via Nostr Gateways <code>npub*.nsite.cloud</code>, <code>npub*.nsite.lol</code>, and <code>npub*.nsite.run</code>.
+          </p>
+          <p class="mt-2 text-sm" :style="{ color: 'var(--muted)' }">
+            Maintain products through interoperable Nostr clients, with the freedom to switch tools anytime.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <a
+              href="https://plebeian.market"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-bold"
+              :style="{ borderColor: 'var(--line)' }"
+            >
+              Plebeian.market
+            </a>
+            <a
+              href="https://shopstr.store"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-bold"
+              :style="{ borderColor: 'var(--line)' }"
+            >
+              shopstr.store
+            </a>
+            <a
+              href="https://conduit.market"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-bold"
+              :style="{ borderColor: 'var(--line)' }"
+            >
+              conduit.market
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
