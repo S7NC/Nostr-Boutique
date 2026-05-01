@@ -122,5 +122,6 @@ const isActive = (path) => route.path === path
     </main>
 
     <SiteFooter />
+    <ChatAvatar />
   </div>
 </template>
